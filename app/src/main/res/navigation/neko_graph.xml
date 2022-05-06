@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/neko_graph"
+    app:startDestination="@id/nekoPhotoFragmanet"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <fragment
+        android:id="@+id/nekoPhotoFragmanet"
+        android:name="com.example.interngallary.NekoPhotoFragment"
+        android:label="NewPhotoFragmanet"
+        tools:layout="@layout/fragment_neko_photo"/>
+</navigation>

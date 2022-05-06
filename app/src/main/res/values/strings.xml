@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">InternGallary</string>
+    <string name="new_placeholder">New Placeholder</string>
+    <string name="popular_placeholder">Popular Placeholder</string>
+    <string name="bottom_nav_neko">Neko</string>
+    <string name="bottom_nav_kitsune">Kitsune</string>
+    <string name="error_massage">Check Your Internet Connection</string>
+    <string name="oh_shucks">Oh Shucks!</string>
+</resources>

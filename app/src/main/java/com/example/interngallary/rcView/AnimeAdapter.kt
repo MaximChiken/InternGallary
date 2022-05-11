@@ -1,8 +1,9 @@
-package com.example.interngallary
+package com.example.interngallary.rcView
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.interngallary.R
 
 class AnimeAdapter: RecyclerView.Adapter<AnimeHolder>()  {
     private val animeList = ArrayList<AnimeEntity>()
@@ -19,7 +20,7 @@ class AnimeAdapter: RecyclerView.Adapter<AnimeHolder>()  {
         return animeList.size
     }
 
-    fun addAnime(anime:AnimeEntity){
+    fun addAnime(anime: AnimeEntity){
         animeList.add(anime)
         notifyDataSetChanged()
     }

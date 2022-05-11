@@ -4,6 +4,7 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.interngallary.databinding.AnimeItemBinding
+import com.example.interngallary.entity.AnimeEntity
 
 
 class AnimeHolder(view: View) : RecyclerView.ViewHolder(view) {

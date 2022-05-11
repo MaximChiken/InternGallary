@@ -9,8 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.interngallary.api.KitsuneApi
 import com.example.interngallary.databinding.FragmentKitsunePhotoBinding
+import com.example.interngallary.entity.AnimeEntity
 import com.example.interngallary.rcView.AnimeAdapter
-import com.example.interngallary.rcView.AnimeEntity
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -20,6 +20,7 @@ class KitsunePhotoFragment : Fragment() {
     private val compositeDisposable = CompositeDisposable()
     private val adapter = AnimeAdapter()
     private lateinit var binding: FragmentKitsunePhotoBinding
+    private var images: List<AnimeEntity> = emptyList()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentKitsunePhotoBinding.inflate(layoutInflater)
@@ -29,12 +30,11 @@ class KitsunePhotoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as AppCompatActivity?)?.supportActionBar?.title = "Kitsune"
-        fetchAnimeQuestList((requireActivity() as? MainActivity)?.kitsuneQuestApi)
+        fetchAnimeQuestList((requireActivity() as? MainActivity)?.kitsuneConfigureRetrofit())
         //Не сохраняет перед уничтожение
         //Перенести вызов запроса в другой метод?
         //Сохранять перед переключение фрагмента?
     }
-
 
     private fun fetchAnimeQuestList(kitsuneQuestApi: KitsuneApi?) {
         kitsuneQuestApi ?: return

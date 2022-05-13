@@ -1,4 +1,4 @@
-package com.example.interngallary
+package com.example.interngallary.kitsunefragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.interngallary.MainActivity
 import com.example.interngallary.api.KitsuneApi
 import com.example.interngallary.databinding.FragmentKitsunePhotoBinding
 import com.example.interngallary.entity.AnimeEntity
@@ -15,7 +16,7 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 
-class KitsunePhotoFragment : Fragment() {
+class KitsuneFragmentView : Fragment() {
 
     private val compositeDisposable = CompositeDisposable()
     private val adapter = AnimeAdapter()
@@ -30,7 +31,7 @@ class KitsunePhotoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as AppCompatActivity?)?.supportActionBar?.title = "Kitsune"
-        fetchAnimeQuestList((requireActivity() as? MainActivity)?.kitsuneConfigureRetrofit())
+        //fetchAnimeQuestList((requireActivity() as? MainActivity)?.kitsuneConfigureRetrofit())
         //Не сохраняет перед уничтожение
         //Перенести вызов запроса в другой метод?
         //Сохранять перед переключение фрагмента?

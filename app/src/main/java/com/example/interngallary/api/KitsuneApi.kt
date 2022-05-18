@@ -7,5 +7,5 @@ import retrofit2.http.Query
 
 interface KitsuneApi {
     @GET("kitsune")
-    fun getQuestList(@Query("amount")amount: Int): Single<KitsuneQuestListResponse>
+    fun getQuestList(@Query("amount")amount: Int): Single<QuestListResponse>
 }

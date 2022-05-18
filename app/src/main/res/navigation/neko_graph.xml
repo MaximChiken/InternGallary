@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nekoPhotoFragmanet"
-        android:name="com.example.interngallary.nekofragment.NekoFragmentView"
+        android:name="com.example.interngallary.nekofragment.NekoFragment"
         android:label="NewPhotoFragmanet"
         tools:layout="@layout/fragment_neko_photo"/>
 </navigation>

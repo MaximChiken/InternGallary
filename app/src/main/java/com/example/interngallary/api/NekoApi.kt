@@ -7,5 +7,5 @@ import retrofit2.http.Query
 
 interface NekoApi {
     @GET("neko")
-    fun getQuestList(@Query("amount")amount: Int): Single<NekoQuestListResponse>
+    fun getQuestList(@Query("amount")amount: Int): Single<QuestListResponse>
 }

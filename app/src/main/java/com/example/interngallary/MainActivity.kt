@@ -30,5 +30,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    //fun kitsuneConfigureRetrofit() = retrofit.create(KitsuneApi::class.java)
 }

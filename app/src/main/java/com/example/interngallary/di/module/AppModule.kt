@@ -3,6 +3,7 @@ package com.example.interngallary.di.module
 import android.content.Context
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.example.interngallary.MyApp
+import com.example.interngallary.api.KitsuneApi
 import com.example.interngallary.api.NekoApi
 import dagger.Module
 import dagger.Provides
@@ -41,14 +42,13 @@ class AppModule(private val app: MyApp) {
 
     @Provides
     @Singleton
-    fun provideChuker(context: Context): ChuckerInterceptor {
-        return ChuckerInterceptor.Builder(context)
-            .build()
-    }
+    fun provideChuker(context: Context) = ChuckerInterceptor.Builder(context).build()
 
     @Provides
     @Singleton
-    fun provideNekoApi(retrofit: Retrofit): NekoApi {
-        return retrofit.create(NekoApi::class.java)
-    }
+    fun provideNekoApi(retrofit: Retrofit) = retrofit.create(NekoApi::class.java)
+
+    @Provides
+    @Singleton
+    fun provideKitsuneApi(retrofit: Retrofit) = retrofit.create(KitsuneApi::class.java)
 }

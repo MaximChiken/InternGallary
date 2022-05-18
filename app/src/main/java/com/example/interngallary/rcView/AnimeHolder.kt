@@ -8,7 +8,10 @@ import com.example.interngallary.entity.AnimeEntity
 
 
 class AnimeHolder(view: View) : RecyclerView.ViewHolder(view) {
-    val binding = AnimeItemBinding.bind(view)
+
+    private val binding = AnimeItemBinding.bind(view)
+
+
     fun bind(anime: AnimeEntity) {
         Glide.with(binding.root.context).load(anime.url).into(binding.imageView);
     }

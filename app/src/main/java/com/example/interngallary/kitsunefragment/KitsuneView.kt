@@ -1,5 +1,5 @@
 package com.example.interngallary.kitsunefragment
 
-import com.example.interngallary.base.mvp.BaseView
+import com.example.interngallary.base.mvp.paging_mvp.BasePagingView
 
-interface KitsuneView : BaseView
+interface KitsuneView : BasePagingView

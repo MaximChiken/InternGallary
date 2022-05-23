@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id "androidx.navigation.safeargs"
 }
 
 android {
@@ -15,8 +16,8 @@ android {
         versionName "1.0"
     }
 
-    buildFeatures{
-        viewBinding = true
+    viewBinding {
+        enabled = true
     }
 
     buildTypes {
@@ -29,21 +30,20 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 }
 
 dependencies {
 
-    //Internet
-    def okHttp_version = "4.8.0"
-    def retrofit_version = "2.9.0"
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-    implementation "com.squareup.retrofit2:adapter-rxjava3:$retrofit_version"
-    implementation "com.squareup.okhttp3:okhttp:$okHttp_version"
-    implementation "com.squareup.okhttp3:logging-interceptor:$okHttp_version"
+    //Internet/
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+    implementation "com.squareup.retrofit2:adapter-rxjava3:2.9.0"
+    implementation "com.squareup.okhttp3:okhttp:4.8.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.8.0"
 
     //Rx
     implementation "io.reactivex.rxjava3:rxjava:3.0.13"
@@ -55,7 +55,6 @@ dependencies {
 
     //Moxy
     implementation "com.github.moxy-community:moxy:2.2.2"
-    //implementation "com.github.moxy-community:moxy-androidx:2.2.2"
     implementation "com.github.moxy-community:moxy-app-compat:2.2.2"
     kapt "com.github.moxy-community:moxy-compiler:2.2.2"
 
@@ -66,6 +65,9 @@ dependencies {
     //Chuker
     debugImplementation "com.github.chuckerteam.chucker:library:3.5.2"
     releaseImplementation "com.github.chuckerteam.chucker:library-no-op:3.5.2"
+
+    //SwipeRefresh
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 
     //
     implementation 'androidx.core:core-ktx:1.7.0'

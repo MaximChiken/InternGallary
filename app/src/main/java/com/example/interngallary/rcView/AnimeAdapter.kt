@@ -6,14 +6,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.interngallary.R
 import com.example.interngallary.entity.AnimeEntity
 
-class AnimeAdapter : RecyclerView.Adapter<AnimeHolder>() {
+class AnimeAdapter(private val callback: (AnimeEntity) -> Unit) : RecyclerView.Adapter<AnimeHolder>() {
 
     private val animeList = ArrayList<AnimeEntity>()
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnimeHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.anime_item, parent, false)
-        return AnimeHolder(view)
+        return AnimeHolder(view, callback)
     }
 
     override fun onBindViewHolder(holder: AnimeHolder, position: Int) {
@@ -29,5 +28,8 @@ class AnimeAdapter : RecyclerView.Adapter<AnimeHolder>() {
         notifyDataSetChanged()
     }
 
-    fun clear() = animeList.clear()
+    fun clear() {
+        animeList.clear()
+        notifyDataSetChanged()
+    }
 }

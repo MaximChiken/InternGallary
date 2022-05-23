@@ -1,7 +1,7 @@
 package com.example.interngallary.di.components
 
 import com.example.interngallary.MyApp
-import com.example.interngallary.base.mvp.BasePresenter
+import com.example.interngallary.detailview.DetailViewPresenter
 import com.example.interngallary.di.module.AppModule
 import com.example.interngallary.kitsunefragment.KitsunePresenter
 import com.example.interngallary.nekofragment.NekoPresenter
@@ -18,4 +18,5 @@ interface AppComponent {
 
     fun provideKitsunePresenter(): KitsunePresenter
 
+    fun provideDetailViewPresenter(): DetailViewPresenter
 }

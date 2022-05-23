@@ -20,21 +20,19 @@ class AppModule(private val app: MyApp) {
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(chuckerInterceptor: ChuckerInterceptor): OkHttpClient =
-        OkHttpClient.Builder()
-            .addInterceptor(chuckerInterceptor)
-            .addInterceptor(HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY })
-            .build()
+    fun provideOkHttpClient(chuckerInterceptor: ChuckerInterceptor) = OkHttpClient.Builder()
+        .addInterceptor(chuckerInterceptor)
+        .addInterceptor(HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY })
+        .build()
 
     @Provides
     @Singleton
-    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit =
-        Retrofit.Builder()
-            .baseUrl("https://nekos.best/api/v2/")
-            .client((okHttpClient))
-            .addConverterFactory(GsonConverterFactory.create())
-            .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
-            .build()
+    fun provideRetrofit(okHttpClient: OkHttpClient) = Retrofit.Builder()
+        .baseUrl("https://nekos.best/api/v2/")
+        .client((okHttpClient))
+        .addConverterFactory(GsonConverterFactory.create())
+        .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
+        .build()
 
     @Provides
     @Singleton

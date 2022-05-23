@@ -2,12 +2,27 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/neko_graph"
-    app:startDestination="@id/nekoPhotoFragmanet"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/nekoFragment">
 
     <fragment
-        android:id="@+id/nekoPhotoFragmanet"
+        android:id="@+id/detailViewFragment"
+        android:name="com.example.interngallary.detailview.DetailViewFragment"
+        android:label="DetailViewFragment"
+        tools:layout="@layout/detail_view_fragment">
+
+        <argument
+            android:name="url"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/nekoFragment"
         android:name="com.example.interngallary.nekofragment.NekoFragment"
-        android:label="NewPhotoFragmanet"
-        tools:layout="@layout/fragment_neko_photo"/>
+        android:label="NekoFragment"
+        tools:layout="@layout/fragment_photo">
+        <action
+            android:id="@+id/action_nekoFragment_to_detailViewFragment"
+            app:destination="@id/detailViewFragment" />
+    </fragment>
 </navigation>

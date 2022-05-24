@@ -10,6 +10,7 @@ class AnimeAdapter(private val callback: (AnimeEntity) -> Unit) : RecyclerView.A
 
     private val animeList = ArrayList<AnimeEntity>()
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnimeHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.anime_item, parent, false)
         return AnimeHolder(view, callback)
@@ -22,6 +23,7 @@ class AnimeAdapter(private val callback: (AnimeEntity) -> Unit) : RecyclerView.A
     override fun getItemCount(): Int {
         return animeList.size
     }
+
 
     fun addAll(list: List<AnimeEntity>) {
         animeList.addAll(list)

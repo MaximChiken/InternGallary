@@ -1,6 +1,5 @@
 package com.example.interngallary.nekofragment
 
-import android.widget.ProgressBar
 import androidx.navigation.fragment.findNavController
 import com.example.interngallary.MyApp
 import com.example.interngallary.base.mvp.paging_mvp.BasePagingFragment
@@ -32,7 +31,9 @@ class NekoFragment : BasePagingFragment<FragmentPhotoBinding, NekoPresenter>(), 
 
     override fun initializeSwipeRefreshLayout() = binding.swipeRefreshLayout
 
-    override fun initializeProgressBar()  = binding.progressBar
+    override fun initializeProgressBar() = binding.progressBar
+
+    //override fun initializeNestedScroll() = binding.nestedScroll
 }
 
 

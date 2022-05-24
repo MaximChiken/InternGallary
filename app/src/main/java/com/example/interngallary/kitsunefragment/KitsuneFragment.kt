@@ -1,6 +1,5 @@
 package com.example.interngallary.kitsunefragment
 
-import android.widget.ProgressBar
 import androidx.navigation.fragment.findNavController
 import com.example.interngallary.MyApp
 import com.example.interngallary.base.mvp.paging_mvp.BasePagingFragment
@@ -23,7 +22,7 @@ class KitsuneFragment : BasePagingFragment<FragmentPhotoBinding, KitsunePresente
 
     override fun initializeBinding() = FragmentPhotoBinding.inflate(layoutInflater)
 
-    override fun initializeAdapterAndRecyclerView() = AnimeAdapter{
+    override fun initializeAdapterAndRecyclerView() = AnimeAdapter {
         val action = KitsuneFragmentDirections.actionKitsuneFragmentToDetailViewFragment(it.url)
         findNavController().navigate(action)
 
@@ -34,6 +33,8 @@ class KitsuneFragment : BasePagingFragment<FragmentPhotoBinding, KitsunePresente
     override fun initializeSwipeRefreshLayout() = binding.swipeRefreshLayout
 
     override fun initializeProgressBar() = binding.progressBar
+
+    //override fun initializeNestedScroll() = binding.nestedScroll
 }
 
 

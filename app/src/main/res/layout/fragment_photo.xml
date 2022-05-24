@@ -7,42 +7,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
 
-        <ViewFlipper
-            android:id="@+id/viewFlipper"
+    <ViewFlipper
+        android:id="@+id/viewFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--&lt;!&ndash;<androidx.core.widget.NestedScrollView&ndash;&gt;
+            android:id="@+id/nested_scroll"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
+-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rcView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="2"
-                tools:listitem="@layout/anime_item">
-            </androidx.recyclerview.widget.RecyclerView>
+                tools:listitem="@layout/anime_item" />
 
-            <include
-                android:id="@+id/includedNoInternet"
-                layout="@layout/layout_no_internet"
+            <com.agrawalsuneet.dotsloader.loaders.LinearDotsLoader
+                android:id="@+id/progressBar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </ViewFlipper>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:loader_animDur="200"
+                app:loader_circleRadius="5dp"
+                app:loader_defaultColor="@color/pink"
+                app:loader_dotsDist="15dp"
+                app:loader_expandOnSelect="true"
+                app:loader_firstShadowColor="@color/purple_500"
+                app:loader_isSingleDir="false"
+                app:loader_noOfDots="3"
+                app:loader_secondShadowColor="@color/pink"
+                app:loader_selectedColor="@color/violet"
+                app:loader_showRunningShadow="true" />
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyle"
+        </LinearLayout>
+        <!--</androidx.core.widget.NestedScrollView>-->
+
+        <include
+            android:id="@+id/includedNoInternet"
+            layout="@layout/layout_no_internet"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-    </LinearLayout>
+            android:layout_height="match_parent" />
+    </ViewFlipper>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 

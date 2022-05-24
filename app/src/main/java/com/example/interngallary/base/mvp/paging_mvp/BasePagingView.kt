@@ -16,4 +16,5 @@ interface BasePagingView : BaseView {
 
     @StateStrategyType(value = OneExecutionStateStrategy::class)
     fun isLoading(bool: Boolean)
+
 }

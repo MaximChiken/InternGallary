@@ -25,13 +25,13 @@ abstract class BasePagingFragment<VB : ViewBinding, P : BasePagingPresenter<*>> 
     private lateinit var viewFlipper: ViewFlipper
     private lateinit var swipeRefreshLayout: SwipeRefreshLayout
     private lateinit var progressBar: LinearDotsLoader
-    //private lateinit var nestedScroll: NestedScrollView
+
 
     abstract fun initializeAdapterAndRecyclerView(): Pair<AnimeAdapter, RecyclerView>
     abstract fun initializeViewFliper(): ViewFlipper
     abstract fun initializeSwipeRefreshLayout(): SwipeRefreshLayout
     abstract fun initializeProgressBar(): LinearDotsLoader
-    //abstract fun initializeNestedScroll(): NestedScrollView
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -39,7 +39,6 @@ abstract class BasePagingFragment<VB : ViewBinding, P : BasePagingPresenter<*>> 
         (activity as? AppCompatActivity?)?.supportActionBar?.setDisplayHomeAsUpEnabled(false)
         progressBar = initializeProgressBar()
         viewFlipper = initializeViewFliper()
-        //nestedScroll = initializeNestedScroll()
         swipeRefreshLayout = initializeSwipeRefreshLayout()
         initializeAdapterAndRecyclerView().also {
             recyclerView = it.second
@@ -51,11 +50,6 @@ abstract class BasePagingFragment<VB : ViewBinding, P : BasePagingPresenter<*>> 
 
     open fun setUpListeners() {
 
-        /*nestedScroll.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
-            if(scrollY == v.getChildAt(0).measuredHeight - v.measuredHeight){
-                presenter.getPage()
-        }
-        })*/
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)

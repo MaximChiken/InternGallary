@@ -13,11 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!--&lt;!&ndash;<androidx.core.widget.NestedScrollView&ndash;&gt;
-            android:id="@+id/nested_scroll"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
--->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -50,7 +45,6 @@
                 app:loader_showRunningShadow="true" />
 
         </LinearLayout>
-        <!--</androidx.core.widget.NestedScrollView>-->
 
         <include
             android:id="@+id/includedNoInternet"

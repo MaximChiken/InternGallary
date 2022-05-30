@@ -1,4 +1,4 @@
-package com.example.interngallary.api
+package com.example.gateway.api
 
 data class QuestListResponse(val results: List<QuestListItem>)
 

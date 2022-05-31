@@ -75,7 +75,6 @@ abstract class BasePagingFragment<VB : ViewBinding, P : BasePagingPresenter<*>> 
         } else {
             progressBar.visibility = View.GONE
         }
-
     }
 
     override fun clearList() = adapter.clear()

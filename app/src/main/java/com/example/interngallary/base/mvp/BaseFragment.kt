@@ -22,4 +22,9 @@ abstract class BaseFragment<VB : ViewBinding> : MvpAppCompatFragment() {
         _binding = initializeBinding()
         return binding.root
     }
+
+    override fun onDestroy() {
+        _binding = null
+        super.onDestroy()
+    }
 }

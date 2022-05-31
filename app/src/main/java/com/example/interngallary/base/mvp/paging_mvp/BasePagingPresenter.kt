@@ -17,11 +17,11 @@ abstract class BasePagingPresenter<T : BasePagingView> : BasePresenter<T>() {
     var loading: Boolean = false
 
 
-    abstract fun getAnimePic(): Single<QuestListResponse>
+    abstract fun getAnimePicture(): Single<QuestListResponse>
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
-        getAnimePic()
+        getAnimePicture()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
@@ -36,7 +36,7 @@ abstract class BasePagingPresenter<T : BasePagingView> : BasePresenter<T>() {
 
     fun getPage() {
         if (!loading) {
-            getAnimePic()
+            getAnimePicture()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe {

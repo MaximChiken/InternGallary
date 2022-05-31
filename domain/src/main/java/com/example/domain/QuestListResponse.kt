@@ -1,4 +1,4 @@
-package com.example.gateway.api
+package com.example.domain
 
 data class QuestListResponse(val results: List<QuestListItem>)
 

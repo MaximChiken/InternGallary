@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.interngallary.R
-import com.example.interngallary.entity.AnimeEntity
+import com.example.gateway.entity.AnimeEntity
 
 class AnimeAdapter(private val callback: (AnimeEntity) -> Unit) : RecyclerView.Adapter<AnimeHolder>() {
 

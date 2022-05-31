@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.viewbinding.ViewBinding
 import com.agrawalsuneet.dotsloader.loaders.LinearDotsLoader
+import com.example.gateway.entity.AnimeEntity
 import com.example.interngallary.base.mvp.BaseFragment
-import com.example.interngallary.entity.AnimeEntity
 import com.example.interngallary.rcView.AnimeAdapter
 import java.lang.StrictMath.abs
 

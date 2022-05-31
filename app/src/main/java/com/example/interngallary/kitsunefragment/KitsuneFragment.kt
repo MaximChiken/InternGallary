@@ -34,7 +34,6 @@ class KitsuneFragment : BasePagingFragment<FragmentPhotoBinding, KitsunePresente
 
     override fun initializeProgressBar() = binding.progressBar
 
-    //override fun initializeNestedScroll() = binding.nestedScroll
 }
 
 

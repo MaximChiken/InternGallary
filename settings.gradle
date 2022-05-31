@@ -9,4 +9,4 @@ dependencyResolutionManagement {
 rootProject.name = "InternGallary"
 include ':app'
 include ':domain'
-include ':gateway'
+include ':data'

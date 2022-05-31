@@ -31,9 +31,6 @@ android {
 
 dependencies {
 
-    // Gateway
-    //implementation project(path: ":app")
-
     // Domain
     implementation project(path: ":domain")
 

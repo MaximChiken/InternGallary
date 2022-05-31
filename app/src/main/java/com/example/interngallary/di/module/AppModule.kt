@@ -3,8 +3,10 @@ package com.example.interngallary.di.module
 import android.content.Context
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.example.interngallary.MyApp
-import com.example.interngallary.api.KitsuneApi
-import com.example.interngallary.api.NekoApi
+import com.example.gateway.api.KitsuneApi
+import com.example.gateway.api.NekoApi
+import com.example.gateway.gateway.KitsuneGatewayImpl
+import com.example.gateway.gateway.NekoGatewayImpl
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -49,4 +51,12 @@ class AppModule(private val app: MyApp) {
     @Provides
     @Singleton
     fun provideKitsuneApi(retrofit: Retrofit) = retrofit.create(KitsuneApi::class.java)
+
+    @Provides
+    @Singleton
+    fun provideNekoGateway(nekoApi: NekoApi) = NekoGatewayImpl(nekoApi)
+
+    @Provides
+    @Singleton
+    fun provideKitsuneGateway(kitsuneApi: KitsuneApi) = KitsuneGatewayImpl(kitsuneApi)
 }

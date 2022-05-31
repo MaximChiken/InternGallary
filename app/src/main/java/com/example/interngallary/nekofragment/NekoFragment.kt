@@ -32,8 +32,6 @@ class NekoFragment : BasePagingFragment<FragmentPhotoBinding, NekoPresenter>(), 
     override fun initializeSwipeRefreshLayout() = binding.swipeRefreshLayout
 
     override fun initializeProgressBar() = binding.progressBar
-
-    //override fun initializeNestedScroll() = binding.nestedScroll
 }
 
 

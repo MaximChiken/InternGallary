@@ -1,8 +1,8 @@
 package com.example.interngallary.base.mvp.paging_mvp
 
-import com.example.interngallary.api.QuestListResponse
+import com.example.domain.QuestListResponse
+import com.example.gateway.entity.AnimeEntity
 import com.example.interngallary.base.mvp.BasePresenter
-import com.example.interngallary.entity.AnimeEntity
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.disposables.CompositeDisposable
@@ -17,11 +17,11 @@ abstract class BasePagingPresenter<T : BasePagingView> : BasePresenter<T>() {
     var loading: Boolean = false
 
 
-    abstract fun getAnime(): Single<QuestListResponse>
+    abstract fun getAnimePic(): Single<QuestListResponse>
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
-        getAnime()
+        getAnimePic()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
@@ -36,7 +36,7 @@ abstract class BasePagingPresenter<T : BasePagingView> : BasePresenter<T>() {
 
     fun getPage() {
         if (!loading) {
-            getAnime()
+            getAnimePic()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe {

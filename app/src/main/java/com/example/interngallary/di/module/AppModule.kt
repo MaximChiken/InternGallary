@@ -4,10 +4,6 @@ import dagger.Module
 
 
 @Module
-class AppModule(/*private val app: MyApp*/) {
-
-    /* @Provides
-     @Singleton
-     fun provideContext(): Context = app.applicationContext*/
+class AppModule {
 
 }

@@ -23,7 +23,7 @@ class RetrofitModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(okHttpClient: OkHttpClient) = Retrofit.Builder()
+    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
         .baseUrl("https://nekos.best/api/v2/")
         .client((okHttpClient))
         .addConverterFactory(GsonConverterFactory.create())

@@ -5,7 +5,6 @@ import com.example.gateway.api.KitsuneApi
 import com.example.gateway.api.NekoApi
 import com.example.gateway.gateway.KitsuneGatewayImpl
 import com.example.gateway.gateway.NekoGatewayImpl
-import com.example.interngallary.MyApp
 import dagger.Module
 import dagger.Provides
 import javax.inject.Named

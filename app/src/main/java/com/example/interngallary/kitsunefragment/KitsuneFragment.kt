@@ -9,7 +9,7 @@ import moxy.presenter.InjectPresenter
 import moxy.presenter.ProvidePresenter
 
 
-class KitsuneFragment : BasePagingFragment<FragmentPhotoBinding, KitsunePresenter>(), KitsuneView {
+class  KitsuneFragment : BasePagingFragment<FragmentPhotoBinding, KitsunePresenter>(), KitsuneView {
 
     @InjectPresenter
     override lateinit var presenter: KitsunePresenter
